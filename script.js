@@ -1,16 +1,19 @@
-// Complete the js code
+// Constructor function for Car
 function Car(make, model) {
-	this.make=make;
-	this.model=model;
+    this.make = make;
+    this.model = model;
 }
 
+// Adding the getMakeModel method to the Car prototype
+Car.prototype.getMakeModel = function() {
+    return this.make + " " + this.model;
+};
+
+// Constructor function for SportsCar
 function SportsCar(make, model, topSpeed) {
-	Car.call(this,make,model);
-	this.topSpeed=topSpeed;
-}
-
-Car.prototype.getMakeModel=function(){
-	return this.make+" "this.model;
+    // Call the parent constructor
+    Car.call(this, make, model);
+    this.topSpeed = topSpeed;
 }
 
 // Inherit from Car
@@ -21,7 +24,6 @@ SportsCar.prototype.constructor = SportsCar;
 SportsCar.prototype.getTopSpeed = function() {
     return this.topSpeed;
 };
-
 
 // Do not change the code below
 window.Car = Car;
